@@ -1,0 +1,143 @@
+==========================================================================================
+                    STREAMING SERVICE CHURN ANALYSIS - EXECUTIVE SUMMARY
+==========================================================================================
+
+📊 DATASET OVERVIEW
+------------------------------------------------------------------------------------------
+Total Customers Analyzed: 500
+Churned Customers: 193 (38.6%)
+Retained Customers: 307 (61.4%)
+
+
+🎯 MAJOR CHURN DRIVERS (Ranked by Statistical Impact)
+==========================================================================================
+
+1. CUSTOMER SERVICE INTERACTIONS (STRONGEST PREDICTOR)
+------------------------------------------------------------------------------------------
+   • Churned customers average: 3.18 interactions/year
+   • Retained customers average: 2.49 interactions/year
+   • Difference: +0.69 interactions (+27.7%)
+   • Effect Size (Cohen's d): 0.596 (MEDIUM-to-LARGE)
+   • Statistical Significance: p < 0.001 (HIGHLY SIGNIFICANT)
+
+   💡 INSIGHT: Customers who churn contact support 28% more frequently,
+      indicating dissatisfaction or service issues before leaving.
+
+
+2. LOW VIEWING ENGAGEMENT (SECOND STRONGEST)
+------------------------------------------------------------------------------------------
+   • Churned customers average: 66.6 hours/month
+   • Retained customers average: 83.2 hours/month
+   • Difference: -16.6 hours (-20.0%)
+   • Effect Size (Cohen's d): -0.521 (MEDIUM)
+   • Statistical Significance: p < 0.001 (HIGHLY SIGNIFICANT)
+
+   💡 INSIGHT: Churned customers watch 20% less content, suggesting
+      they find less value or interest in the service.
+
+
+3. FEWER BINGE-WATCHING SESSIONS
+------------------------------------------------------------------------------------------
+   • Churned customers average: 6.2 sessions/month
+   • Retained customers average: 7.7 sessions/month
+   • Difference: -1.5 sessions (-19.7%)
+   • Effect Size (Cohen's d): -0.500 (MEDIUM)
+   • Statistical Significance: p < 0.001 (HIGHLY SIGNIFICANT)
+
+   💡 INSIGHT: Lower binge-watching indicates weaker content engagement
+      and addiction, making it easier for customers to leave.
+
+
+4. LIMITED CONTENT VARIETY EXPLORATION
+------------------------------------------------------------------------------------------
+   • Churned customers average: 19.5 unique titles/month
+   • Retained customers average: 23.7 unique titles/month
+   • Difference: -4.3 titles (-18.1%)
+   • Effect Size (Cohen's d): -0.471 (MEDIUM)
+   • Statistical Significance: p < 0.001 (HIGHLY SIGNIFICANT)
+
+   💡 INSIGHT: Churned customers explore 18% fewer titles, suggesting
+      they may not find enough appealing content.
+
+
+5. SHORTER VIEWING SESSIONS
+------------------------------------------------------------------------------------------
+   • Churned customers average: 49.4 minutes/session
+   • Retained customers average: 57.8 minutes/session
+   • Difference: -8.3 minutes (-14.4%)
+   • Effect Size (Cohen's d): -0.458 (MEDIUM)
+   • Statistical Significance: p < 0.001 (HIGHLY SIGNIFICANT)
+
+   💡 INSIGHT: Shorter sessions may indicate content isn't compelling
+      enough to keep viewers engaged for extended periods.
+
+
+6. SUBSCRIPTION TIER DIFFERENCES
+------------------------------------------------------------------------------------------
+   • Basic   :  43.5% churn rate (90/207 customers)
+   • Standard:  39.5% churn rate (83/210 customers)
+   • Premium :  24.1% churn rate (20/83 customers)
+
+   • Statistical Significance: Chi-square p = 0.009 (SIGNIFICANT)
+
+   💡 INSIGHT: Basic tier has 80% higher churn than Premium tier,
+      suggesting either value perception issues or feature limitations.
+
+
+📈 GENRE PREFERENCES
+------------------------------------------------------------------------------------------
+   Highest Risk Genres:
+   1. Horror      :  52.3% churn rate (n=44)
+   2. Thriller    :  48.3% churn rate (n=29)
+   3. Action      :  44.6% churn rate (n=74)
+
+   Lowest Risk Genres:
+   1. Drama       :  35.3% churn rate (n=102)
+   2. Comedy      :  33.0% churn rate (n=100)
+   3. Documentary :  25.9% churn rate (n=54)
+
+   • Statistical Significance: Chi-square p = 0.118 (NOT SIGNIFICANT)
+   💡 INSIGHT: Genre preference is not a strong churn predictor,
+      though Horror and Thriller viewers show slightly higher churn.
+
+
+==========================================================================================
+🎯 STRATEGIC RECOMMENDATIONS
+==========================================================================================
+
+1. IMPROVE CUSTOMER SUPPORT EXPERIENCE
+   • Reduce need for support contacts through better UX/interface
+   • Implement proactive support for customers with 3+ interactions
+   • Create self-service resources to reduce friction
+
+2. BOOST ENGAGEMENT FOR AT-RISK CUSTOMERS
+   • Identify users with <70 hours/month viewing and send personalized recommendations
+   • Create engagement campaigns for users with declining watch time
+   • Implement 'watch next' suggestions to increase session duration
+
+3. ENCOURAGE CONTENT EXPLORATION
+   • Recommend diverse content to users watching <20 unique titles/month
+   • Create curated playlists across different genres
+   • Implement discovery features to expose users to more variety
+
+4. ENHANCE BASIC TIER VALUE
+   • Review Basic tier features vs. price point
+   • Consider tier upgrade incentives for engaged Basic tier users
+   • Add value-added features to Basic tier without full upgrade
+
+5. DEVELOP PREDICTIVE CHURN MODEL
+   • Use these 5 key features to build early warning system:
+     - Customer Service Interactions > 3
+     - Viewing Hours < 70 hours/month
+     - Binge Sessions < 6 per month
+     - Unique Titles < 20 per month
+     - Avg Session Duration < 50 minutes
+   • Target retention campaigns at high-risk customers proactively
+
+
+==========================================================================================
+📊 DETAILED VISUALIZATION: See 'churn_drivers_analysis.png'
+==========================================================================================
+
+Analysis Complete!
+

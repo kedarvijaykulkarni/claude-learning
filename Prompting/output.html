@@ -1,0 +1,262 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">7.5 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">75.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with an interdisciplinary passage containing mixed topics (e.g., neuroscience, psychology, and statistics) to ensure the prompt accurately identifies and separates distinct subject areas</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in cognitive neuroscience have leveraged functional magnetic resonance imaging (fMRI) to investigate neural correlates of decision-making processes. A longitudinal study examined 147 participants using both neuroimaging and behavioral psychology assessments, measuring activation patterns in the prefrontal cortex during risk evaluation tasks. Statistical analysis employed mixed-effects regression models with p-value thresholds of 0.05, controlling for age and educational attainment as covariates. The findings suggest that individual differences in dopamine receptor density correlate with risk-aversion scores, with effect sizes ranging from Cohen's d = 0.6 to 0.9 across conditions. These results integrate neuroscientific mechanisms with psychological theory and quantitative methodology to elucidate the biological foundations of economic choice behavior.</td>
+                <td class="criteria">• Extracts all distinct subject areas present in the passage (neuroscience, psychology, statistics)<br>• Returns output as a valid JSON array of strings<br>• Avoids redundancy while capturing meaningful disciplinary boundaries</td>
+                <td class="output"><pre>```json
+[
+  "cognitive neuroscience",
+  "functional magnetic resonance imaging",
+  "fMRI",
+  "decision-making",
+  "neural correlates",
+  "longitudinal study",
+  "neuroimaging",
+  "behavioral psychology",
+  "prefrontal cortex",
+  "risk evaluation",
+  "mixed-effects regression models",
+  "statistical analysis",
+  "dopamine receptor density",
+  "risk-aversion",
+  "effect sizes",
+  "economic choice behavior"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no extra commentary or text beyond the array. Regarding secondary criteria, it successfully extracts topics from all three disciplinary areas (cognitive neuroscience, behavioral psychology, and statistics). However, the inclusion of both 'functional magnetic resonance imaging' and 'fMRI' represents a minor violation of the 'avoid redundancy' criterion, as these are identical concepts. Additionally, some items are quite specific methodological details rather than broader subject areas, though this is a matter of interpretation regarding what constitutes a 'topic.' The solution is strong overall but has minor room for improvement in applying the redundancy criterion more strictly.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a dense paragraph heavy in domain-specific jargon (e.g., biotechnology or quantum physics) to evaluate whether the prompt can extract high-level topics despite specialized terminology</td>
+                <td class="prompt-inputs"><strong>content:</strong> CRISPR-Cas9 gene editing systems have revolutionized molecular biology through precise genomic modifications via double-strand break mechanisms and homology-directed repair pathways. Recent advances in off-target mitigation employ high-fidelity Cas9 variants with engineered PAM specificity, while multiplexed sgRNA arrays enable simultaneous editing of polyploid crop genomes. Base editing and prime editing technologies circumvent DSB formation entirely, facilitating cytosine-to-thymine and adenine-to-inosine conversions with minimal indel formation. Clinical applications in hematopoietic stem cell therapy demonstrate therapeutic efficacy for sickle cell disease and β-thalassemia, though immunogenicity concerns regarding Cas9 protein persistence and off-target effects in heterochromatic regions warrant further investigation.</td>
+                <td class="criteria">• Extracts all major topics despite specialized terminology (e.g., CRISPR-Cas9, PAM specificity, homology-directed repair, base editing, prime editing, clinical applications)<br>• Returns output as a valid JSON array of strings<br>• Topics are high-level and meaningful rather than overly granular or trivial</td>
+                <td class="output"><pre>```json
+[
+  "CRISPR-Cas9 gene editing",
+  "Genomic modifications",
+  "Double-strand break mechanisms",
+  "Homology-directed repair pathways",
+  "Off-target mitigation",
+  "High-fidelity Cas9 variants",
+  "PAM specificity",
+  "Multiplexed sgRNA arrays",
+  "Polyploid crop genomes",
+  "Base editing",
+  "Prime editing",
+  "Cytosine-to-thymine conversion",
+  "Adenine-to-inosine conversion",
+  "Indel formation",
+  "Hematopoietic stem cell therapy",
+  "Sickle cell disease",
+  "β-thalassemia",
+  "Immunogenicity",
+  "Cas9 protein persistence",
+  "Heterochromatic regions"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no extra commentary or text. The response contains only the JSON array as required. Regarding secondary criteria, the solution successfully extracts all major topics and specialized terminology. However, there are minor issues with granularity - some topics like the specific base conversions are somewhat redundant with their parent technologies, and 'Indel formation' is more of a measurement outcome than a primary topic. The inclusion of 'Molecular biology' would have been beneficial for context. These are minor deficiencies that don't prevent the solution from meeting the core objectives.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing implicit topics that require inference rather than explicit mentions to assess whether the prompt extracts conceptual themes or only surface-level keywords</td>
+                <td class="prompt-inputs"><strong>content:</strong> The study examined how prolonged exposure to artificial lighting during evening hours affected circadian rhythm disruption in urban populations. Participants who worked in windowless office environments showed elevated cortisol levels and reported increased difficulty initiating sleep, despite maintaining consistent bedtimes. Interestingly, those who spent lunch breaks in natural sunlight demonstrated normalized melatonin production and improved sleep quality metrics. These findings suggest that temporal light exposure patterns, rather than total daily illumination, serve as the primary entrainment mechanism for human biological clocks, with implications for workplace design and public health interventions targeting sleep disorders.</td>
+                <td class="criteria">• Extracts both explicit topics (circadian rhythms, artificial lighting, sleep) and implicit conceptual themes (workplace ergonomics, public health, biological entrainment mechanisms)<br>• Identifies inferred topics that emerge from context and relationships between ideas, not just surface-level keywords<br>• Returns results as a valid JSON array of strings</td>
+                <td class="output"><pre>```json
+[
+  "artificial lighting",
+  "circadian rhythm disruption",
+  "urban populations",
+  "windowless office environments",
+  "cortisol levels",
+  "sleep initiation",
+  "natural sunlight",
+  "melatonin production",
+  "sleep quality",
+  "temporal light exposure patterns",
+  "biological clocks",
+  "entrainment mechanism",
+  "workplace design",
+  "sleep disorders",
+  "public health interventions"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary or text. It meets the secondary criteria well by identifying both explicit topics (artificial lighting, sleep quality, melatonin) and implicit conceptual themes (workplace design, public health interventions, entrainment mechanisms). The extraction is thorough and contextually appropriate. While there are minor opportunities to capture additional inferred relationships or deeper thematic connections, the solution demonstrates solid understanding of the passage's content and successfully extracts the primary and secondary topics as requested.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a multi-topic passage that discusses methodological approaches alongside substantive findings to determine if the prompt distinguishes between methodological topics and research topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study employs a mixed-methods approach combining quantitative regression analysis with qualitative semi-structured interviews to examine the relationship between organizational culture and employee retention rates. We utilized hierarchical linear modeling (HLM) to account for nested data structures across 47 companies, controlling for industry sector and company size as covariates. Our findings reveal that psychological safety—operationalized through Edmondson's framework—emerges as the strongest predictor of retention, explaining 34% of variance in turnover intentions. Additionally, qualitative analysis identified three emergent themes: trust in leadership, career development opportunities, and work-life balance integration. The regression model demonstrated statistical significance (p < .001), with effect sizes ranging from small to large depending on organizational context.</td>
+                <td class="criteria">• Extracts substantive research topics (e.g., psychological safety, employee retention, organizational culture) rather than purely methodological approaches (e.g., HLM, regression analysis, mixed-methods)<br>• Returns output as a JSON array of strings<br>• Includes all major research topics without duplicating closely related concepts</td>
+                <td class="output"><pre>```json
+[
+  "mixed-methods approach",
+  "quantitative regression analysis",
+  "qualitative semi-structured interviews",
+  "organizational culture",
+  "employee retention",
+  "hierarchical linear modeling",
+  "nested data structures",
+  "industry sector",
+  "company size",
+  "psychological safety",
+  "Edmondson's framework",
+  "turnover intentions",
+  "trust in leadership",
+  "career development opportunities",
+  "work-life balance integration",
+  "statistical significance",
+  "effect sizes"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-low">5</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it returns a valid JSON array of strings with only topic names and no extra commentary. However, it significantly violates the primary secondary criterion by including numerous methodological approaches (HLM, regression analysis, mixed-methods, statistical significance, effect sizes) when the task explicitly asks to extract substantive research topics rather than methodological ones. The criteria states 'Extracts substantive research topics (e.g., psychological safety, employee retention, organizational culture) rather than purely methodological approaches (e.g., HLM, regression analysis, mixed-methods).' The solution includes 7 items that are primarily methodological rather than substantive. While the solution does capture the core substantive topics well, the inclusion of methodological elements represents a material deviation from the stated criteria.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

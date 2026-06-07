@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "68 kg",
+      "goal": "Marathon training with carbohydrate loading and meal timing around a 2-hour morning run",
+      "restrictions": "Vegetarian, no nuts"
+    },
+    "solution_criteria": [
+      "Meal plan covers exactly one full day with 4-5 meals strategically timed around the 2-hour morning training session",
+      "Total daily calorie intake is appropriate for a marathon runner (approximately 3000-3500 calories)",
+      "Carbohydrates comprise 55-65% of total calories with emphasis on pre- and post-run meals",
+      "Plan is compact and presented in a concise format suitable for quick reference"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring high calorie intake and carbohydrate loading, including specific timing of meals around training sessions"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "85 kg",
+      "goal": "Muscle building and strength gains with optimal recovery for weightlifting training",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan spans exactly 1 day with clear meal timing",
+      "Includes high protein intake (minimum 1.6g per kg bodyweight) distributed across meals",
+      "Contains pre-workout and post-workout nutrition strategically timed around training",
+      "Compact format with practical, realistic food choices suitable for a single athlete"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength/power athlete (weightlifter) requiring high protein intake and muscle recovery focus, with emphasis on nutrient timing around workouts"
+  },
+  {
+    "prompt_inputs": {
+      "height": "180 cm",
+      "weight": "75 kg",
+      "goal": "Make weight for boxing match (target 71 kg) while maintaining strength and performance for training",
+      "restrictions": "No dairy, no processed foods, limited to: chicken breast, brown rice, sweet potatoes, broccoli, eggs, oats, olive oil, salt, water"
+    },
+    "solution_criteria": [
+      "Meal plan totals approximately 1,800-2,000 calories to achieve safe weight loss while preserving muscle",
+      "Includes at least 150g protein distributed across meals to maintain athletic performance",
+      "Specifies hydration strategy accounting for weight-cutting needs without compromising training capacity",
+      "All meals use only the listed restricted food options"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a sport-specific constraint athlete (boxer making weight) requiring calorie control and hydration balance while maintaining performance, with limited food options"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Create a JSON configuration object for an AWS Lambda function that processes S3 events, with environment variables for the target SNS topic ARN and logging level",
+    "format": "json",
+    "solution_criteria": "Must include valid Lambda function properties (Handler, Runtime, Role), environment variables section with SNS_TOPIC_ARN and LOG_LEVEL, and S3 event trigger configuration"
+  },
+  {
+    "task": "Write a Python function that takes an AWS S3 bucket name and object key as parameters and returns the S3 URI in the format 's3://bucket-name/object-key'",
+    "format": "python",
+    "solution_criteria": "Function must accept two string parameters, properly format the S3 URI, handle edge cases like trailing slashes, and return a valid S3 URI string"
+  },
+  {
+    "task": "Create a regular expression that matches valid AWS IAM role ARNs in the format: arn:aws:iam::account-id:role/role-name, where account-id is 12 digits and role-name contains alphanumerics, hyphens, and underscores",
+    "format": "regex",
+    "solution_criteria": "Regex must match valid IAM role ARNs, reject invalid formats, correctly validate 12-digit account IDs, and allow alphanumeric characters, hyphens, and underscores in role names"
+  }
+]

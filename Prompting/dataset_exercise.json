@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in cognitive neuroscience have leveraged functional magnetic resonance imaging (fMRI) to investigate neural correlates of decision-making processes. A longitudinal study examined 147 participants using both neuroimaging and behavioral psychology assessments, measuring activation patterns in the prefrontal cortex during risk evaluation tasks. Statistical analysis employed mixed-effects regression models with p-value thresholds of 0.05, controlling for age and educational attainment as covariates. The findings suggest that individual differences in dopamine receptor density correlate with risk-aversion scores, with effect sizes ranging from Cohen's d = 0.6 to 0.9 across conditions. These results integrate neuroscientific mechanisms with psychological theory and quantitative methodology to elucidate the biological foundations of economic choice behavior."
+    },
+    "solution_criteria": [
+      "Extracts all distinct subject areas present in the passage (neuroscience, psychology, statistics)",
+      "Returns output as a valid JSON array of strings",
+      "Avoids redundancy while capturing meaningful disciplinary boundaries"
+    ],
+    "task_description": "\n    \"Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with an interdisciplinary passage containing mixed topics (e.g., neuroscience, psychology, and statistics) to ensure the prompt accurately identifies and separates distinct subject areas"
+  },
+  {
+    "prompt_inputs": {
+      "content": "CRISPR-Cas9 gene editing systems have revolutionized molecular biology through precise genomic modifications via double-strand break mechanisms and homology-directed repair pathways. Recent advances in off-target mitigation employ high-fidelity Cas9 variants with engineered PAM specificity, while multiplexed sgRNA arrays enable simultaneous editing of polyploid crop genomes. Base editing and prime editing technologies circumvent DSB formation entirely, facilitating cytosine-to-thymine and adenine-to-inosine conversions with minimal indel formation. Clinical applications in hematopoietic stem cell therapy demonstrate therapeutic efficacy for sickle cell disease and \u03b2-thalassemia, though immunogenicity concerns regarding Cas9 protein persistence and off-target effects in heterochromatic regions warrant further investigation."
+    },
+    "solution_criteria": [
+      "Extracts all major topics despite specialized terminology (e.g., CRISPR-Cas9, PAM specificity, homology-directed repair, base editing, prime editing, clinical applications)",
+      "Returns output as a valid JSON array of strings",
+      "Topics are high-level and meaningful rather than overly granular or trivial"
+    ],
+    "task_description": "\n    \"Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a dense paragraph heavy in domain-specific jargon (e.g., biotechnology or quantum physics) to evaluate whether the prompt can extract high-level topics despite specialized terminology"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The study examined how prolonged exposure to artificial lighting during evening hours affected circadian rhythm disruption in urban populations. Participants who worked in windowless office environments showed elevated cortisol levels and reported increased difficulty initiating sleep, despite maintaining consistent bedtimes. Interestingly, those who spent lunch breaks in natural sunlight demonstrated normalized melatonin production and improved sleep quality metrics. These findings suggest that temporal light exposure patterns, rather than total daily illumination, serve as the primary entrainment mechanism for human biological clocks, with implications for workplace design and public health interventions targeting sleep disorders."
+    },
+    "solution_criteria": [
+      "Extracts both explicit topics (circadian rhythms, artificial lighting, sleep) and implicit conceptual themes (workplace ergonomics, public health, biological entrainment mechanisms)",
+      "Identifies inferred topics that emerge from context and relationships between ideas, not just surface-level keywords",
+      "Returns results as a valid JSON array of strings"
+    ],
+    "task_description": "\n    \"Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a passage containing implicit topics that require inference rather than explicit mentions to assess whether the prompt extracts conceptual themes or only surface-level keywords"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study employs a mixed-methods approach combining quantitative regression analysis with qualitative semi-structured interviews to examine the relationship between organizational culture and employee retention rates. We utilized hierarchical linear modeling (HLM) to account for nested data structures across 47 companies, controlling for industry sector and company size as covariates. Our findings reveal that psychological safety\u2014operationalized through Edmondson's framework\u2014emerges as the strongest predictor of retention, explaining 34% of variance in turnover intentions. Additionally, qualitative analysis identified three emergent themes: trust in leadership, career development opportunities, and work-life balance integration. The regression model demonstrated statistical significance (p < .001), with effect sizes ranging from small to large depending on organizational context."
+    },
+    "solution_criteria": [
+      "Extracts substantive research topics (e.g., psychological safety, employee retention, organizational culture) rather than purely methodological approaches (e.g., HLM, regression analysis, mixed-methods)",
+      "Returns output as a JSON array of strings",
+      "Includes all major research topics without duplicating closely related concepts"
+    ],
+    "task_description": "\n    \"Extract topics out of a passage of text from a scholarly article into a JSON array of strings\"\n    ",
+    "scenario": "Testing with a multi-topic passage that discusses methodological approaches alongside substantive findings to determine if the prompt distinguishes between methodological topics and research topics"
+  }
+]
